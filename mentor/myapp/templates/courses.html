@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}course{% endblock  %}
+{% block contant %} <!-- Page Title -->
+<div class="page-title" data-aos="fade">
+  <div class="heading">
+    <div class="container">
+      <div class="row d-flex justify-content-center text-center">
+        <div class="col-lg-8">
+          <h1>Courses</h1>
+          <p class="mb-0">At <b>Mentor</b>, we offer a wide range of IT training programs designed to equip you with the skills you need to succeed in today’s competitive tech landscape. Whether you’re a beginner or an experienced professional, we have something for everyone!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div><!-- End Page Title -->
+
+<!-- Courses Section -->
+<section id="courses" class="courses section">
+
+  <div class="container">
+
+    <div class="row">
+      {% for i in C%}
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+        <div class="course-item">
+          <img src="{{i.c_pic.url}}" class="img-fluid" alt="...">
+          <div class="course-content">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <p class="category">{{i.c_name}}</p>
+              <p class="price"><b><span>&#2547;</span></b>{{i.price}}</p>
+            </div>
+
+            <h3><a href="course-details.html">{{i.c_heading}}</a></h3>
+            <p class="description">{{i.about}}</p>
+            <div class="trainer d-flex justify-content-between align-items-center">
+              <div class="trainer-profile d-flex align-items-center">
+                <img src="{{i.t_pic.url}}" class="img-fluid" alt="">
+                <a href="" class="trainer-link">{{i.t_name}}</a>
+              </div>
+              <div class="trainer-rank d-flex align-items-center">
+                <i class="bi bi-person user-icon"></i>&nbsp;50
+                &nbsp;&nbsp;
+                <i class="bi bi-heart heart-icon"></i>&nbsp;65
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End Course Item-->
+      {%endfor%}
+      
+
+    </div>
+
+  </div>
+
+</section><!-- /Courses Section -->
+{% endblock  %}

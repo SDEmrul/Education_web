@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}trainers{% endblock  %}
+{% block contant %} <!-- Page Title -->
+<div class="page-title" data-aos="fade">
+  <div class="heading">
+    <div class="container">
+      <div class="row d-flex justify-content-center text-center">
+        <div class="col-lg-8">
+          <h1>Meet Our Expert Trainers</h1>
+          <p class="mb-0">
+            At <i><b>Mentor</b></i>, we take pride in our team of highly skilled and experienced trainers who are dedicated to empowering students with industry-relevant IT skills.
+            
+            Why Learn from Our Trainers?
+            
+            Industry Expertise: Our trainers bring years of hands-on experience in IT fields like software development, data science, cybersecurity, cloud computing, and more.
+            Certified Professionals: They hold globally recognized certifications such as AWS, Microsoft, Cisco, and CompTIA, ensuring world-class training quality.
+            Passion for Teaching: Beyond technical knowledge, our trainers are passionate educators who simplify complex concepts and inspire learning.
+            Practical Focus: With a focus on real-world applications, our trainers provide practical insights through live projects and case studies.
+            Supportive Mentorship: They guide learners at every step, from mastering fundamentals to preparing for certifications and landing dream jobs.
+            When you learn with us, you're not just gaining skills—you’re building a future under the guidance of the best in the industry.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div><!-- End Page Title -->
+
+<!-- Trainers Section -->
+<section id="trainers" class="section trainers">
+
+  <div class="container">
+
+    <div class="row gy-5">
+      {% for i in t%}
+      <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+        <div class="member-img">
+          <img src="{{i.picture.url}}" class="img-fluid" alt="">
+          <div class="social">
+            <a href="https://www.twitter.com/" target="_blank" aria-label="twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" aria-label="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank" aria-label="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="member-info text-center">
+          <h4>{{i.name}}</h4>
+          <p>{{i.profession}}</p>
+          <span>{{i.about}}</span>
+         
+        </div>
+      </div><!-- End Team Member -->
+      {%endfor%}
+
+    </div>
+
+  </div>
+
+</section><!-- /Trainers Section -->
+{% endblock  %}
